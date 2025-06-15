@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>POS Inventory</title>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: 0 auto; padding: 20px; }
+    input { display: block; margin: 10px 0; padding: 8px; width: 100%; }
+    button { background: #0066ff; color: white; border: none; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>🔵 POS Cylinder Inventory</h1>
+  
+  <div id="login">
+    <h2>Distributor Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <div id="inventory" style="display:none;">
+    <h2>Update Inventory</h2>
+    <!-- Inventory will load here -->
+  </div>
+
+  <script>
+    async function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      // Simple check (we'll improve this later)
+      if(username === 'user1' && password === 'pass123') {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('inventory').style.display = 'block';
+      } else {
+        document.getElementById('error').textContent = 'Wrong username/password';
+      }
+    }
+  </script>
+</body>
+</html>
